@@ -1,7 +1,7 @@
 const SCHOOL={lat:31.56812830756984,lng:75.60527693091984};
 const BUS_IDS=Array.from({length:10},(_,i)=>`Bus ${i+1}`);
-const API_URL='https://amardeep-bus-api.onrender.com'; // Set this to the deployed backend URL, e.g. https://your-backend.example.com
-const DRIVER_PIN='1234', ADMIN_PIN='4321'; // Demo-only client-side PINs, NOT secure authentication.
+const API_URL='https://amardeep-bus-api.onrender.com';
+const DRIVER_PIN='1234', ADMIN_PIN='4321';
 const app=document.querySelector('#app');let watchId=null,pollId=null,map=null,markers=[];
 const busOptions=()=>BUS_IDS.map(b=>`<option>${b}</option>`).join('');
 const distance=(a,b)=>{const r=Math.PI/180,dlat=(b.lat-a.lat)*r,dlng=(b.lng-a.lng)*r,x=Math.sin(dlat/2)**2+Math.cos(a.lat*r)*Math.cos(b.lat*r)*Math.sin(dlng/2)**2;return 6371*2*Math.atan2(Math.sqrt(x),Math.sqrt(1-x))};
